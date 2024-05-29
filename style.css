@@ -128,9 +128,9 @@ body {
     transition-duration: 0.25s;
 }
 .btn_s:hover {
-    border-color: rgb(0, 166, 249);
-    background-color: rgb(234, 242, 0);
-    color: black; 
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(0, 166, 249);
+    color: rgb(255, 255, 255); 
 }
 
 .btn:hover {
@@ -156,36 +156,4 @@ body {
 .success {
     background: #03f363f7;
     /* margin: 5px; */
-}
-
-/* ///////////////////////  shop cart/////////////////////////////////////// */
-
-#shop {
-    /* display: block; */
-    text-align: center;
-    margin: 10% auto;
-}
-
-.buttonShop{
-    display: unset;
-    outline: none;
-    cursor: pointer;
-}
-
-.countShop{
-    display: inline;
-    border-radius: 50%;   
-    background-color: #a1e0a6;
-    color: #878885;
-    font-size: 20px;
-    font-weight: bold;
-    position: relative;
-    top:-55px;
-    padding: 2%;   
-    text-align: center; 
-}
-
-.countShop:hover{  
-    background-color: #f6f607;
-    color: #3d3d3d;
 }
