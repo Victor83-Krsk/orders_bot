@@ -19,7 +19,7 @@ body {
 #container {
     display: grid;
     /* grid-template-columns: repeat(4, 1fr); */
-    grid-template-columns: repeat( auto-fit, minmax(130px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
     padding: auto;
     border-radius: 8px;
     margin: 0 auto;
@@ -31,10 +31,10 @@ body {
     grid-row: auto;
     /* align-content: center; */
     padding: 8px;
-    margin: 10px;
+    margin: 8px;
     border-radius: 8px;
     background-color: #e2ebed;
-    width: 120px;
+    width: 150px;
     height: 200px;
 }
 
@@ -127,16 +127,10 @@ body {
     cursor: pointer;
     transition-duration: 0.25s;
 }
-
-.submit_content{
-    align-items: center;
-    text-align: center;
-    padding: 25px auto;
-}
 .btn_s:hover {
-    border-color: rgb(255, 255, 255);
-    background-color: rgb(0, 166, 249);
-    color: rgb(255, 255, 255); 
+    border-color: rgb(0, 166, 249);
+    background-color: rgb(234, 242, 0);
+    color: black; 
 }
 
 .btn:hover {
@@ -162,4 +156,12 @@ body {
 .success {
     background: #03f363f7;
     /* margin: 5px; */
+}
+
+/* ///////////////////////  shop cart/////////////////////////////////////// */
+
+#shop {
+    /* display: block; */
+    text-align: center;
+    margin: 10% auto;
 }
