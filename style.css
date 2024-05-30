@@ -1,5 +1,5 @@
 body {
-    background-color: rgbф(87, 185, 149, 0, 8);
+    background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     /* margin: auto; */
 }
@@ -20,39 +20,42 @@ body {
     display: grid;
     /* grid-template-columns: repeat(4, 1fr); */
     grid-template-columns: repeat( auto-fit, minmax(160px, 1fr) );
-    padding: auto;
+    /* padding: auto; */
     border-radius: 8px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 
 .card_product {
+    width: 150px;
+    height: 210px;
     display: grid;
-    grid-row: auto;
-    /* align-content: center; */
     padding: 8px;
     margin: 8px;
-    border-radius: 8px;
-    background-color: #e2ebed;
-    width: 155px;
-    height: 190px;
+    background-color: #f1f1f1;
+    box-shadow:  3px 5px 7px rgba(30, 30, 31, .5);
+    border: 2px solid ;
+    border-radius: 5px;
+    border-color: #3d4146c2;
+   }
+
+.counter { 
+    position: relative;
+    top: 0px;
+    left: 110px;
+    /* padding: 10px;*/
+    margin: 5px; 
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0000;
+    text-shadow: 2px 3px 8px rgb(255, 255, 255);
 }
 
 .image_block {
-    /* text-align: center; */
+    text-align: center;
 }
 
-.counter {
-    position: relative;
-    top: 5px;
-    left:0px;
-    padding: 10px;
-    margin: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #ff0000;
-    text-shadow: 2px 2px 8px rgb(255, 255, 255);
-}
+
 
 .card_title {
     display: block;
@@ -72,11 +75,27 @@ body {
     background-color: #adf3f4;
 }
 
+
+.btn_block {
+    /* width: 140px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: repeat( auto-fit, minmax(50px, 1fr) ); */
+    grid-column-gap: 8px;
+	grid-row-gap: 8px;
+    justify-content: center;
+    justify-items: center;
+    padding: 10px auto 20px auto;
+    margin: 10px auto;
+    text-align: center;
+    align-items: center;
+}
+
+
 .increment,
-.decrement,
-.reset {
-    height: 28px;
-    width: 40px;
+.decrement {
+    height: 30px;
+    width: 50px;
     padding: 0 auto;
     border-radius: 6px;
     font-size: 20px;  
@@ -89,28 +108,18 @@ body {
     transition-duration: 0.25s;
 }
 .increment {
-    background-color: #009ef4;
-    /* border: 2px solid #0000007b;    */
+    background-color: #0082f4;
+    /* border: 2px solid #009ef4;    */
 }
 .decrement {
-    background-color: #009ef4;
-    /* border: 2px solid #0000007b; */
+    background-color: #0082f4;
+    /* border: 2px solid #009ef4; */
 }
 
-.reset {
-    background-color: #2e8d46;
-    border: 2px solid #2e8d46;
-}
-
-
-
-.btn_block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 6px;
-    margin:  6px auto;
-    text-align: center;
-    align-items: center;
+.btn:hover {
+    border-color: #fa6f1b;
+    background-color: rgb(255, 255, 0);
+    color: black; 
 }
 
 .btn_s {  
@@ -133,11 +142,6 @@ body {
     color: rgb(255, 255, 255); 
 }
 
-.btn:hover {
-    border-color: rgb(255, 255, 255);
-    background-color: rgb(255, 255, 255);
-    color: black; 
-}
 
 .warning {
     background: #ff8800;
