@@ -42,13 +42,18 @@ body {
 .counter { 
     position: relative;
     top: 0px;
-    left: 110px;
-    /* padding: 10px;*/
+    left: 90px;
     margin: 5px; 
-    font-size: 24px;
+    padding: 5px;
+    font-size: 21px;
     font-weight: bold;
-    color: #ff0000;
-    text-shadow: 2px 3px 8px rgb(255, 255, 255);
+    color: #ffffff;
+    text-shadow: 1px 2px 3px rgb(0, 0, 0);
+    background-color: #ff7b00;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    text-align: center;
 }
 
 .image_block {
