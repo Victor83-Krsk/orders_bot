@@ -1,17 +1,17 @@
 
 let list_id = [
-    "Ogurtcy`",
-    "Pomidory`",
+    "Ogurtcy",
+    "Pomidory",
     "Pekinka",
-    "Morkov`",
-    "Salat ",
+    "Morkov",
+    "Salat",
     "Rukkola",
     "Rosemaryn",
     "Timian",
     "Imbir",
     "Maionez",
-    "Ogurtcy_M`",
-    "Olive`",
+    "Ogurtcy_m",
+    "Olive",
 ]
 
 let list_products = [
@@ -68,18 +68,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let card = doc.createElement('div');
         card.setAttribute('class', "card_product");
 
+        let quantity = doc.createElement('text');
+        quantity.setAttribute('id', `${list_id[x]}`);
+        quantity.setAttribute('class', 'counter');
+        quantity.innerHTML = 0;
+        card.appendChild(quantity);
+
         let img_block = doc.createElement('div');
         img_block.setAttribute('class', "image_block");
 
         let img_png = doc.createElement('img');
         img_png.setAttribute('src', list_images[x]);
         img_png.setAttribute('alt', "imgage");
-
-        let quantity = doc.createElement('text');
-        quantity.setAttribute('id', `${list_id[x]}`);
-        quantity.setAttribute('class', 'counter');
-        quantity.innerHTML = 0;
-        img_block.appendChild(quantity);
+       
 
         img_block.appendChild(img_png);
         card.appendChild(img_block);
@@ -97,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         btn_minus.setAttribute('class', 'decrement btn');
         btn_minus.setAttribute('id', list_products[x] + "-");
         btn_minus.setAttribute('onclick', 'changeValue(this.id)');
-
+ 
         let btn_plus = doc.createElement('button');
         btn_plus.textContent = '+'
         btn_plus.setAttribute('class', 'increment btn');
@@ -115,10 +116,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 function changeValue(elemnt) {
-    let btn = document.getElementById(elemnt); // console.log("btn clicked ", btn) 
-    let parentCard = btn.parentNode.parentNode
-    let children = parentCard.childNodes;  // elemnt[elemnt.length - 1]
-    let quanty = children[0].childNodes[0]
+    let btn = document.getElementById(elemnt);
+    //  console.log("btn clicked ", btn) 
+    
+    let parentCard = btn.parentNode.parentNode 
+    console.log("parentCard ", parentCard) 
+
+    let children = parentCard.childNodes; 
+    console.log("children ", children)  // elemnt[elemnt.length - 1]
+    let quanty = children[0];
+    console.log("quanty ", quanty) 
+    // let quanty = children[0].childNodes[0]
     let name = elemnt.substring(0, elemnt.length - 1);
     cnt = Number(quanty.innerHTML)
 
