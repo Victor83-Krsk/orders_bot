@@ -33,7 +33,7 @@ let list_products = [
     "Имбирь",
     "Молоко",
     "Майонез",
-    "Огурцы М",
+    "Огурчики М",
     "Оливки",
 ]
 
@@ -41,7 +41,7 @@ let list_images = [
     "./images/chicken-64.png",
     "./images/ogur.png",
     "./images/tomato-96.png",
-    "./images/pepper-96.png",
+    "./images/pepper-64.png",
     "./images/pekinka-64.png",
     "./images/carrot-64.png",
     "./images/salat-64.png",
