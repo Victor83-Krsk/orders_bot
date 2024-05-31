@@ -31,31 +31,28 @@ body {
 }
 
 
-.card_product {
-    width: 150px;
-    height: 210px;
-    display: grid;
+.card_product {  
     padding: 8px;
     margin: 8px;
     background-color: #ffffff;
-    box-shadow:  3px 5px 7px rgba(30, 30, 31, .5);
-    border: 2px solid ;
+    box-shadow: -2px -4px 5px rgba(30, 30, 31, .5), 3px 5px 7px rgba(30, 30, 31, .5);
     border-radius: 5px;
-    border-color: #3d4146c2;
+    border-radius: 6px;
+    text-align: center;
    }
 
 .counter { 
     position: relative;
-    top: 0px;
-    left: 90px;
-    margin: 5px; 
-    padding: 5px;
+    top: 10px;
+    left: 55px;
+    margin: 8px;
+    padding: 8px;
     font-size: 21px;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 1px 2px 3px rgb(0, 0, 0);
     background-color: #40c057;
-    border-radius: 50%;
+    border-radius: 8px;
     width: 36px;
     height: 36px;
     text-align: center;
@@ -148,8 +145,10 @@ body {
     transition-duration: 0.25s;
 }
 .btn_s:hover {       
-    background-color: rgb(0, 166, 249);
-    color: rgb(0, 0, 0); 
+    /* background-color: rgb(0, 166, 249); */
+    box-shadow: 3px 3px 5px rgb(56, 56, 56);
+    color: rgb(255, 255, 255); 
+    text-shadow: 1px 1px 1px rgb(61, 61, 61);
 }
 
 
