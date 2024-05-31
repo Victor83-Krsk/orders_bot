@@ -67,12 +67,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     for (let x = 0; x < list_products.length; x++) {
         let card = doc.createElement('div');
         card.setAttribute('class', "card_product");
-
-        let quantity = doc.createElement('text');
+        let quantity = doc.createElement('text');        
         quantity.setAttribute('id', `${list_id[x]}`);
         quantity.setAttribute('class', 'counter');
         quantity.innerHTML = 0;
+        quantity.style.visibility = "hidden";
+      
         card.appendChild(quantity);
+
 
         let img_block = doc.createElement('div');
         img_block.setAttribute('class', "image_block");
@@ -116,33 +118,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 function changeValue(elemnt) {
-    let btn = document.getElementById(elemnt);
-    //  console.log("btn clicked ", btn) 
-    
-    let parentCard = btn.parentNode.parentNode 
-    console.log("parentCard ", parentCard) 
-
-    let children = parentCard.childNodes; 
-    console.log("children ", children)  // elemnt[elemnt.length - 1]
-    let quanty = children[0];
-    console.log("quanty ", quanty) 
-    // let quanty = children[0].childNodes[0]
+    let btn = document.getElementById(elemnt);   //  console.log("btn clicked ", btn) 
+    let parentCard = btn.parentNode.parentNode;     // console.log("parentCard ", parentCard) 
+    let children = parentCard.childNodes; // console.log("children ", children)  // elemnt[elemnt.length - 1]
+    let quanty = children[0];  //   console.log("quanty ", quanty)   // let quanty = children[0].childNodes[0]
     let name = elemnt.substring(0, elemnt.length - 1);
     cnt = Number(quanty.innerHTML)
-
-
+  
     if (btn.getAttribute("id").endsWith("+")) {
         cnt++;
         order_item[name] = cnt;
     }
     else if (btn.getAttribute("id").endsWith("-") && cnt > 0) {
         cnt--;
-        if (cnt == 0) { delete order_item[name]; }
+        if (cnt == 0) { 
+            quanty.style.visibility = "hidden";
+            delete order_item[name]; 
+        }
         else {
-            order_item[name] = cnt;            
+            order_item[name] = cnt;
         }
     }
+
     quanty.innerHTML = cnt; 
+    if (cnt == 0) {quanty.style.style.visibility = "hidden"; }
+    else { quanty.style.visibility = "visible"; }
+
   
      // console.log(elemnt.substring(0, elemnt.length - 1), cnt);
      // значения (которое в строковом формате) в целое число counter.innerText = parseInt(counter.innerText) + 1
