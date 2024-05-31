@@ -7,7 +7,7 @@
 body {
     background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
-    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 
@@ -19,11 +19,14 @@ body {
 } */
 
 #container {
+    max-width: 750px;
     display: grid;
-    /* grid-template-columns: repeat(4, 1fr); */
     grid-template-columns: repeat( auto-fit, minmax(160px, 1fr) );
-    /* padding: auto; */
+    grid-column-gap: 8px;
+	grid-row-gap: 8px;
     border-radius: 8px;
+    /* grid-template-columns: repeat(4, 1fr); */
+    /* padding: auto; */
     /* margin: 0 auto; */
 }
 
@@ -34,7 +37,7 @@ body {
     display: grid;
     padding: 8px;
     margin: 8px;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     box-shadow:  3px 5px 7px rgba(30, 30, 31, .5);
     border: 2px solid ;
     border-radius: 5px;
@@ -51,7 +54,7 @@ body {
     font-weight: bold;
     color: #ffffff;
     text-shadow: 1px 2px 3px rgb(0, 0, 0);
-    background-color: #0082f4;
+    background-color: #40c057;
     border-radius: 50%;
     width: 36px;
     height: 36px;
@@ -115,17 +118,17 @@ body {
     transition-duration: 0.25s;
 }
 .increment {
-    background-color: #0082f4;
-    /* border: 2px solid #009ef4;    */
+    background-color: #ff361e;
+    border: 1px solid #000000;
 }
 .decrement {
-    background-color: #0082f4;
-    /* border: 2px solid #009ef4; */
+    background-color: #ff9600;
+    border: 1px solid #000000;
 }
 
 .btn:hover {
     border-color: #fa6f1b;
-    background-color: rgb(255, 255, 0);
+    background-color: rgb(8, 238, 38);
     color: black; 
 }
 
@@ -172,7 +175,8 @@ body {
 /* ///////////////////////  shop cart/////////////////////////////////////// */
 
 #shop {
-    /* display: block; */
+    display: block;
+    max-width: 750px;
     text-align: center;
     margin-bottom:25px;
 }
