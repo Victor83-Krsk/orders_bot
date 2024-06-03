@@ -1,25 +1,25 @@
 
+
 let list_id = [
-    "Stakan",
-    "Stakan",
-    "Stakan",
-    "Stakan",
-    "Stakan",
-    "Stakan",
-    "Stakan",
-    "Stakan",
-    
+    "Stakan02",
+    "Stakan03",
+    "Stakan04",
+    "Kryshki02",
+    "Kryshki0304",
+    "SaladMini",
+    "SaladRound",
+    "SaladLarge",    
 ]
 
 let list_products = [
-    "Стакан",
-    "Стакан",
-    "Стакан",
-    "Стакан",
-    "Стакан",
-    "Стакан",
-    "Стакан",
-    "Стакан",    
+    "Стакан (0.2л)",
+    "Стакан (0.3л)",
+    "Стакан (0.4л)",
+    "Крышки (0.3, 0.4)",
+    "Салатник мини овальный",
+    "Салатник круглый",
+    "Салатник прямоугольный",
+    "Для горячего",    
 ]
 
 let list_images = [
