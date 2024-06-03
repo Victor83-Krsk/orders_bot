@@ -125,8 +125,8 @@ body {
 
 .btn:hover {
     border-color: #fa6f1b;
-    background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255); 
+/*     background-color: rgb(255, 255, 255); */
+    color: rgb(0, 0, 0); 
 }
 
 .btn_s {  
