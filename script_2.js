@@ -1,5 +1,4 @@
 
-
 let list_id = [
     "Stakan02",
     "Stakan03",
@@ -9,17 +8,23 @@ let list_id = [
     "SaladMini",
     "SaladRound",
     "SaladLarge",    
+    "HotDinner",    
+    "SendvichSmal",    
+    "SendvichLarge",    
 ]
 
 let list_products = [
     "Стакан (0.2л)",
     "Стакан (0.3л)",
     "Стакан (0.4л)",
+    "Крышки (0.2)",
     "Крышки (0.3, 0.4)",
     "Салатник мини овальный",
     "Салатник круглый",
     "Салатник прямоугольный",
     "Для горячего",    
+    "Сендвич узкий",    
+    "Сендвич широкий",    
 ]
 
 let list_images = [
@@ -30,6 +35,9 @@ let list_images = [
     "./images/stakan.png",
     "./images/stakan.png",
     "./images/stakan.png",
+    "./images/stakan.png",    
+    "./images/stakan.png",    
+    "./images/stakan.png",    
     "./images/stakan.png",    
 ]
 
