@@ -125,17 +125,17 @@ body {
 
 .btn:hover {
     border-color: #fa6f1b;
-/*     background-color: rgb(255, 255, 255); */
-    color: rgb(0, 0, 0); 
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255); 
 }
 
 .btn_s {  
     /* width: 94%; */
-    margin: 20px auto;
+    margin: 20px ;
     padding: 15px ;
     font-size: 20px;  
-    color: rgb(0, 0, 0);
-    background-color: rgb(12, 176, 72);;
+    color: rgb(255, 255, 255);
+    background-color: #4CAF50;
     border-radius: 6px;
     border-color: rgb(71, 77, 72);
     transition-property: color, background-color, border-color;
@@ -147,7 +147,7 @@ body {
 .btn_s:hover {       
     /* background-color: rgb(0, 166, 249); */
     /* box-shadow: 3px 3px 5px rgb(56, 56, 56); */
-    border-color: 2px rgb(255, 98, 0);
+    /* border-color: 2px rgb(255, 98, 0); */
 
     color: rgb(255, 255, 255); 
     text-shadow: 1px 1px 1px rgb(61, 61, 61);
@@ -176,8 +176,8 @@ body {
 /* ///////////////////////  shop cart/////////////////////////////////////// */
 
 #shop {
-    display: block;
-    max-width: 750px;
+    /* display: block; */
+    /* max-width: 750px; */
     text-align: center;
     margin-bottom:30px;
 }
