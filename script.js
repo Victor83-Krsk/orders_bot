@@ -1,5 +1,4 @@
 
-
 let list_id = [
     "Chicken",
     "Ogurtcy",
@@ -33,7 +32,7 @@ let list_products = [
     "Имбирь",
     "Молоко",
     "Майонез",
-    "Огурчики М",
+    "Огурцы М",
     "Оливки",
 ]
 
@@ -50,12 +49,11 @@ let list_images = [
     "./images/rosemary-64.png",
     "./images/thyme-64.png",
     "./images/imbir-64.png",
-    "./images/milk-pack-64.png",
+    "./images/cowmilk-64.png",
     "./images/mayonnaise-64.png",
     "./images/salt_ogur.png",
     "./images/olive-64.png",
 ]
-
 let cnt = 0
 let order_item = {}
 let tg = {
