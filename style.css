@@ -194,8 +194,8 @@ body {
 /* ///////////////////////  shop cart/////////////////////////////////////// */
 
 #shop {
-  /* display: block; */
-  /* max-width: 750px; */
+  display: flex-box;
+  max-width: 750px;
   text-align: center;
   margin-bottom: 30px;
 }
