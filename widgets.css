@@ -1,0 +1,173 @@
+:root { 
+  --main-color: rgb(124, 117, 117);
+  --main-content-color: rgb(220, 223, 225);
+  --main-bg-color: rgb(86, 81, 81);
+  --main-btns-bg-color: rgb(76, 231, 171);
+  --main-tgl-bg-color: rgb(66, 104, 243);
+  --main-led-color: rgb(101, 227, 18);
+  --main-font-color: rgb(0, 169, 254);
+  --main-btns-font-color: rgb(255, 255, 255);
+  --main-smoke-color: rgb(215, 223, 233);
+  --main-time-color: rgb(255, 225, 0);
+  --main-wgt-color: rgb(68, 74, 81);
+  --main-text-size: 18px;
+  --main-btns-text-size: 15px;
+}
+
+body{
+  background-color:#1b776879;
+}
+
+.green {
+  background-color: var(--main-btns-bg-color);
+}
+.blue {
+  background-color: var(--main-tgl-bg-color);
+}
+
+/* #container2 { 
+  background-color: var(--main-bg-color);  
+  background-color: var(--main-content-color);  
+  display: grid;
+ 
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  padding: 2px;
+  margin: 5px auto;
+  max-width: 100%;
+  min-width: 50%;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px #ffffff;
+}  */
+
+
+/* .row_item{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  gap: 5px;
+  align-content: center;
+  justify-content: space-evenly;
+  max-height: min-content;
+  text-align: center;
+  align-items: center; 
+} */
+
+
+
+
+/* //////// INPUT TIME WIDGET///////////////////// */
+
+/* //////// BUTTON WIDGET///////////////////// */
+.btns {
+  /* background-color: var(--main-btns-bg-color); */
+  color: var(--main-btns-font-color);
+  text-shadow: 4px 3px 5px #000000;
+  border-radius: 4px;
+  padding: 7px;
+  margin: 5px;
+  min-width: 70px;
+  font-size: var(--main-btns-text-size);
+}
+
+
+/* //////// LED WIDGET///////////////////// */
+
+.ledWidget {
+  display: inline-block;
+  text-align: center;
+  align-content: center;
+  border-radius: 3px;
+  background-color: var(--main-smoke-color);
+  padding:2px;
+  margin-right: 5px;
+}
+
+
+.led {
+  /* position: absolute;
+    top: 50%; 
+    left: 20%; */
+  /* transform: translate(0, 0);  */
+  margin: 5px auto;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  background-image: radial-gradient(farthest-corner at 50% 20%, #b30000 0%, #330000 100%);
+  box-shadow: 0 0.5em 1em rgba(102, 0, 0, 0.5);
+}
+
+.led.on {
+  background-image: radial-gradient(farthest-corner at 50% 75%, red 0%, #990000 100%);
+  box-shadow: 0 1em 1.5em rgba(255, 0, 0, 0.5);
+}
+
+.led:after {
+  /* content: '';
+  position: absolute;
+  top: 0%;
+  left: 25%;
+  width: 60%; */
+  margin: 3px auto;
+  width: 15px;
+  height: 15px;
+  border-radius: 60%;
+  background-image: linear-gradient(rgba(208, 11, 11, 0.933), rgba(23, 61, 198, 0.736));
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)); */
+}
+
+
+
+/* input[type=time] {
+  border: none;
+  border-radius: 5px;
+  color: var(--main-white-color);
+  font-size: var(--main-text-size);
+  background-color: var(--main-white-color);
+  font-family: helvetica;
+  max-width: min-content;
+  padding: 4px;
+  margin: auto;
+} */
+
+
+/* 
+/* Wrapper around the hour, minute, second, and am/pm fields as well as 
+the up and down buttons and the 'X' button */
+/* input[type=time]::-webkit-datetime-edit-fields-wrapper {
+  display: flex;
+} */
+
+/* The space between the fields - between hour and minute, the minute and 
+second, second and am/pm */
+/* input[type=time]::-webkit-datetime-edit-text {
+  padding: 16px 4px;
+  background-color: var(--main-bg-color);
+} */
+
+/* The naming convention for the hour, minute, second, and am/pm field is
+`-webkit-datetime-edit-{field}-field` */
+
+/* Hour */
+/* input[type=time]::-webkit-datetime-edit-hour-field {
+  background-color: var(--main-bg-color);
+  border-radius: 8%;
+  padding: auto;
+  margin: 2px
+} */
+
+/* Minute */
+/* input[type=time]::-webkit-datetime-edit-minute-field {
+  background-color: var(--main-bg-color);
+  border-radius: 10%;
+  padding: 19px 13px;
+} */
+
+/* AM/PM */
+/* input[type=time]::-webkit-datetime-edit-ampm-field {
+  display: none;
+  background-color: var(--main-bg-color);
+  border-radius: 15%;
+  color: var(--main-bg-color);
+  padding: 5px auto;
+}  */
