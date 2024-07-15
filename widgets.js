@@ -74,48 +74,69 @@ function time_handler(el) {
 }
 
 
+// function namePage() {
+//   let hr = window.location.href;
+//   let page = hr.substring(hr.lastIndexOf("/") + 1, hr.lastIndexOf(".html"));   console.log("page:", page);
+//   return page;
+// }
 
 document.addEventListener("DOMContentLoaded", function (event) {
+
   let doc = document;
+  let btn_mode = "";
+  let on_time = "";
+  let off_time = "";
+  let btn_toggle = "";
+  let slider = "";
+  let name_label = "";
+  let value_label = "";
+  let range = "";
 
   for (let x = 0; x < list_rels.length; x++) {
     let row_item = doc.createElement("div");
     // console.log("list_rels:", list_rels[x]);      
-    row_item.setAttribute("class", "row my-1 mx-1 p-1 rounded-2 bg-secondary "); // row_item  btn-group   border border-dark rounded-1 bg-light
+    row_item.setAttribute("class", "row  my-1 mx-1 p-1 rounded-2 bg-light "); // row_item  btn-group   border border-dark rounded-1 bg-light
 
-    let btn_mode = doc.createElement("button");
+    btn_mode = doc.createElement("button");
     btn_mode.id = "Mode " + (x + 1);
+    btn_mode.style.maXwidth = 100 + 'px';
+
     btn_mode.setAttribute("data-pin", list_rels[x].vPinMode);
     btn_mode.setAttribute("data-action", "mode");
     btn_mode.setAttribute("data-mode", list_rels[x].mode);
     let btn_color = list_rels[x].mode === "AUTO" ? "warning" : "info"
     btn_mode.setAttribute("class", "col-sm btn btn-" + btn_color + " m-1 p-1");
     btn_mode.innerHTML = btn_mode.dataset.mode;
-
-  
+    // row_item.appendChild(btn_mode); 
 
     // const timeControl = document.querySelector('input[type="time"]');  // timeControl.value = "15:30";
     // let time_form = doc.createElement("div");
     // time_form.setAttribute("class", "col-6 row");
 
-    let on_time = doc.createElement("input");
+    on_time = doc.createElement("input");
     on_time.setAttribute("type", "time");
+    on_time.style.maXwidth = 100 + 'px';
     on_time.setAttribute("id", "onTime " + (x + 1));
-    on_time.setAttribute("class", "col form-control m-1 "); //list_rels[x].mode === "AUTO" ? "btn btn-warning m-1 p-1" : "btn btn-secondary m-1 p-1");  //  "form-control "
+    on_time.setAttribute("class", "col rounded-1 m-1 "); //list_rels[x].mode === "AUTO" ? "btn btn-warning m-1 p-1" : "btn btn-secondary m-1 p-1");  //  "rounded-1 "
     on_time.setAttribute("value", list_rels[x].onTime);
     on_time.setAttribute("data-time", list_rels[x].onTime);
     on_time.setAttribute("onchange", "time_handler(this)"); 
+    // row_item.appendChild(on_time);
 
-    let off_time = doc.createElement("input");
+
+    off_time = doc.createElement("input");
+    off_time.style.maXwidth = 100 + 'px';
     off_time.setAttribute("type", "time");
     off_time.setAttribute("id", "offTime " + (x + 1));
-    off_time.setAttribute("class", "col form-control m-1 "); // list_rels[x].mode === "AUTO" ? "btn btn-warning m-1 p-1" : "btn btn-secondary m-1 p-1"); 
+    off_time.setAttribute("class", "col rounded-1 m-1 "); // list_rels[x].mode === "AUTO" ? "btn btn-warning m-1 p-1" : "btn btn-secondary m-1 p-1"); 
     off_time.setAttribute("value", list_rels[x].offTime);
     off_time.setAttribute("data-time", list_rels[x].offTime);
     off_time.setAttribute("onchange", "time_handler(this)");
+    // row_item.appendChild(off_time);
+  // row_item.appendChild(time_form);
  
     if((list_rels[x].name).includes("Relay ")) {  
-    let btn_toggle = doc.createElement("button");
+    btn_toggle = doc.createElement("button");
     btn_toggle.setAttribute("data-action", "toggle");
     btn_toggle.setAttribute("data-pin", list_rels[x].vPin);
     btn_toggle.setAttribute("data-state", list_rels[x].state);
@@ -127,42 +148,50 @@ document.addEventListener("DOMContentLoaded", function (event) {
     row_item.appendChild(btn_mode);
     row_item.appendChild(on_time);
     row_item.appendChild(off_time);
-    // row_item.appendChild(time_form);
+  
     row_item.appendChild(btn_toggle);    
     doc.getElementById("container").appendChild(row_item);
   }
 
   else if(list_rels[x].name.includes("Pwm ")){
+
+    btn_mode.setAttribute("class", "col-sm btn btn-" + btn_color + " m-1 p-1");
+    on_time.setAttribute("class", "col-sm rounded-1 m-1 ");
+    off_time.setAttribute("class", "col-sm rounded-1 m-1 ");
     
-    let slider = doc.createElement("div");
-    slider.setAttribute("class", "row col");
+    slider = doc.createElement("div");
+    slider.setAttribute("class", " col ");
+     row_item.appendChild(btn_mode);  
+     row_item.appendChild(on_time);  
+     row_item.appendChild(off_time);  
 
-    let name_label = doc.createElement("label");
+    name_label = doc.createElement("label");
     name_label.for =  "Pwm "+ (x + 1); 
-    name_label.className = "col text-white m-auto p-1 mx-4 h6"; 
+    name_label.className = "col text-primary p-1 m-1 h6"; 
     name_label.innerHTML = list_rels[x].name;
-    slider.appendChild(name_label);
+    slider.appendChild(name_label);  
 
-    let value_label = doc.createElement("text");
-    value_label.for =  "Pwm "+ (x + 1); 
-    value_label.className = "col text-white float-right p-1 h6"; 
+ 
+    value_label = doc.createElement("text");
+    value_label.for =  "Pwm "+ (x + 1);
+    value_label.className = "col text-danger p-1 mx-auto h6"; 
     value_label.innerHTML = list_rels[x].state;
-    slider.appendChild(value_label);
+    slider.appendChild(value_label); 
 
-    let range = doc.createElement("input");
+    range = doc.createElement("input");
     range.type = "range";
     range.id = "Pwm "+ (x + 1);
-    range.class = "row m-1 form-range ";  // data_atrs :  DOMStringMap {action: 'toggle', pin: 'V6', state: '0'}
+    range.className = "row mx-auto float-end align-middle"; 
     range.value = list_rels[x].state;
     range.dataset.pin = list_rels[x].vPin;    
     range.dataset.pwm = list_rels[x].state;
-    // range.setAttribute("onchange", "range_handler(this)"); 
-    slider.appendChild(range);
-    
+    // range.class = "col m-1 form-range ";  // data_atrs :  DOMStringMap {action: 'toggle', pin: 'V6', state: '0'}
+    slider.appendChild(range); 
+
     row_item.appendChild(slider);
 
-    doc.getElementById("container2").appendChild(row_item);
   }
+  doc.getElementById("container2").appendChild(row_item);
 
   }
 });
