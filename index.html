@@ -16,23 +16,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           
-          <div class="date_time">
+          <!-- <div class="date_time">
             <input type="date" class="date">  </input>
             <input type="time" class="time">  </input>
-          </div>
+          </div> -->
 
-          <div class="collapse navbar-collapse" id="mynavbar">
-            <!-- <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/widgets.html">Relays</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/sensors.html">Sensors</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/params.html">Params</a>
-              </li>
-            </ul> -->
+          <div class="collapse navbar-collapse" id="mynavbar">        
 
             <ul id="appControl" class="navbar-nav ms-auto" style="align-items:center; ">                     
                 <li  class="nav-item me-3">
@@ -46,11 +35,9 @@
                   src="./img/plus.png" alt="plus" style="width:32px; text-align: center;" class="rounded-pill invisible">
                 </li>
             </ul>
-            <!-- <form class="d-flex"> -->
-              <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
-              <!-- <button class="btn btn-primary" type="button">Search</button> -->
-            <!-- </form> -->
+       
           </div>
+
         </div>
       </nav>
 
@@ -59,7 +46,7 @@
           <a class="nav-link active text-warning"  href="/index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white"  href="/widgets.html">Outputs</a>
+          <a class="nav-link text-white"  href="/widgets.html">Relays</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="/sensors.html">Sensors</a>
@@ -116,46 +103,25 @@
   </div>
 
 
+
+
+
+
 <script src="index.js"></script>
 
 <script>
   function namePage() {
   let hr = window.location.href;
-  let page = hr.substring(hr.lastIndexOf("/") + 1, );
-   hr.lastIndexOf(".html")
+  let page = hr.substring(hr.lastIndexOf("/") + 1, hr.lastIndexOf(".html"));   console.log("page:", page);
   return page; 
 }
-
 
 var date = new Date();
 // This will set the current date and time in both the inputs 
 var currentDate = date.toISOString().substring(0 , 10);
 var currentTime = date.toISOString().substring(11 , 19);
-let t = document.querySelector('.time').value = currentTime;
-let d = document.querySelector('.date').value = currentDate;
-
-
-
-var els = document.getElementsByTagName("a");
-// for (var i = 0, l = els.length; i < l; i++) {
-  // console.log("els :", els); 
-
-    // var el = els[i];
-    // if((el.href).includes(namePage)) {  
-    //   console.log("Current page:", page); 
-    // }
-    // else {
-    //     el.innerHTML = "dead link";
-    //     el.href = "#";
-    // }
-// }
-
-// var els = document.querySelectorAll('a[href=' + namePage() + ']');
-// // var els = document.querySelectorAll('a[href^=http://www.example.com/]');
-// for (var i = 0, l = els.length; i < l; i++) {
-//     els[i].textContent = 'dead link';
-//     els[i].href = '#';
-// }
+document.querySelector('.date').value = currentDate;
+document.querySelector('.time').value = currentTime;
 
 </script>
 
