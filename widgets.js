@@ -1,14 +1,14 @@
-let list_rels = [];
+let list_outputs = [];
 let elements =
   '{ "elements" : [' +
-  '{ "name":"Relay 1", "vPin":"V2", "vPinMode":"V1", "mode":"MANUAL", "state":"0", "led":"V21", "onTime":"18:00", "offTime":"23:15" },' +
-  '{ "name":"Relay 2", "vPin":"V4", "vPinMode":"V3", "mode":"MANUAL", "state":"0", "led":"V22", "onTime":"18:00", "offTime":"23:15" },' +
-  '{ "name":"Relay 3", "vPin":"V6", "vPinMode":"V5", "mode":"MANUAL", "state":"0", "led":"V23", "onTime":"18:00", "offTime":"23:15" },' +
-  '{ "name":"Relay 4", "vPin":"V8", "vPinMode":"V7", "mode":"MANUAL", "state":"0", "led":"V24", "onTime":"18:00", "offTime":"23:15" },' +
-  '{ "name":"Relay 5", "vPin":"V10", "vPinMode":"V9", "mode":"MANUAL", "state":"0", "led":"V25", "onTime":"18:00", "offTime":"23:15" },' +
-  '{ "name":"Relay 6", "vPin":"V12", "vPinMode":"V11", "mode":"MANUAL", "state":"0", "led":"V26", "onTime":"18:00", "offTime":"23:15" },' +
-  '{ "name":"Pwm 7", "vPin":"V14",  "mode":"MANUAL", "state":"0",  "onTime":"18:00", "offTime":"23:15" },' +
-  '{ "name":"Pwm 8", "vPin":"V15",  "mode":"MANUAL", "state":"0",  "onTime":"18:00", "offTime":"23:15" }' +
+  '{"type":"relay",  "name":"Socket_1", "vPin":"V2", "vPinMode":"V1", "mode":"MANUAL", "state":"0", "led":"V21", "onTime":"18:00", "offTime":"23:15" },' +
+  '{"type":"relay",  "name":"Socket_2", "vPin":"V4", "vPinMode":"V3", "mode":"MANUAL", "state":"0", "led":"V22", "onTime":"18:00", "offTime":"23:15" },' +
+  '{"type":"relay",  "name":"Socket_3", "vPin":"V6", "vPinMode":"V5", "mode":"MANUAL", "state":"0", "led":"V23", "onTime":"18:00", "offTime":"23:15" },' +
+  '{"type":"relay",  "name":"Socket_4", "vPin":"V8", "vPinMode":"V7", "mode":"MANUAL", "state":"0", "led":"V24", "onTime":"18:00", "offTime":"23:15" },' +
+  '{"type":"relay",  "name":"Lamp_1", "vPin":"V10", "vPinMode":"V9", "mode":"MANUAL", "state":"0", "led":"V25", "onTime":"18:00", "offTime":"23:15" },' +
+  '{"type":"relay",  "name":"Lamp_2", "vPin":"V12", "vPinMode":"V11", "mode":"MANUAL", "state":"0", "led":"V26", "onTime":"18:00", "offTime":"23:15" },' +
+  '{"type":"pwm",  "name":"Led 1", "vPin":"V14",  "mode":"MANUAL", "state":"0",  "onTime":"18:00", "offTime":"23:15" },' +
+  '{"type":"pwm",  "name":"Led 2", "vPin":"V15",  "mode":"MANUAL", "state":"0",  "onTime":"18:00", "offTime":"23:15" }' +
   "]}";
 
 let obj = new Object();
@@ -39,12 +39,12 @@ let vLed = "";
 
 if (localStorage.getItem("relays")) {
   obj = JSON.parse(localStorage.getItem("relays"));
-  list_rels = obj.elements;
+  list_outputs = obj.elements;
   console.log("\nObject relays:", obj, "\n");
 }
 else {
   obj = JSON.parse(elements);   // console.log("obj:", obj);
-  list_rels = obj.elements;     // console.log("list_rels:", list_rels);
+  list_outputs = obj.elements;     // console.log("list_outputs:", list_outputs);
 }
 
 function range_handler(el) {
@@ -74,14 +74,8 @@ function time_handler(el) {
 }
 
 
-// function namePage() {
-//   let hr = window.location.href;
-//   let page = hr.substring(hr.lastIndexOf("/") + 1, hr.lastIndexOf(".html"));   console.log("page:", page);
-//   return page;
-// }
 
 document.addEventListener("DOMContentLoaded", function (event) {
-
   let doc = document;
   let btn_mode = "";
   let on_time = "";
@@ -92,22 +86,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let value_label = "";
   let range = "";
 
-  for (let x = 0; x < list_rels.length; x++) {
+  for (let x = 0; x < list_outputs.length; x++) {
     let row_item = doc.createElement("div");
-    // console.log("list_rels:", list_rels[x]);      
-    row_item.setAttribute("class", "row  my-1 mx-1 p-1 rounded-2 bg-light "); // row_item  btn-group   border border-dark rounded-1 bg-light
+    // console.log("list_outputs:", list_outputs[x]);      
+    row_item.setAttribute("class", "row my-1 mx-auto  rounded-2 bg-dark"); // row_item  btn-group   border border-dark rounded-1 bg-light
 
     btn_mode = doc.createElement("button");
     btn_mode.id = "Mode " + (x + 1);
-    btn_mode.style.maXwidth = 100 + 'px';
-
-    btn_mode.setAttribute("data-pin", list_rels[x].vPinMode);
+    btn_mode.setAttribute("data-pin", list_outputs[x].vPinMode);
     btn_mode.setAttribute("data-action", "mode");
-    btn_mode.setAttribute("data-mode", list_rels[x].mode);
-    let btn_color = list_rels[x].mode === "AUTO" ? "warning" : "info"
-    btn_mode.setAttribute("class", "col-sm btn btn-" + btn_color + " m-1 p-1");
+    btn_mode.setAttribute("data-mode", list_outputs[x].mode);
+    let btn_color = list_outputs[x].mode === "AUTO" ? "warning" : "info"
+    btn_mode.setAttribute("class", "col btn btn-" + btn_color + " m-1 p-1");
     btn_mode.innerHTML = btn_mode.dataset.mode;
-    // row_item.appendChild(btn_mode); 
+    // row_item.appendChild(btn_mode);
+  
+  
 
     // const timeControl = document.querySelector('input[type="time"]');  // timeControl.value = "15:30";
     // let time_form = doc.createElement("div");
@@ -115,35 +109,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     on_time = doc.createElement("input");
     on_time.setAttribute("type", "time");
-    on_time.style.maXwidth = 100 + 'px';
     on_time.setAttribute("id", "onTime " + (x + 1));
-    on_time.setAttribute("class", "col rounded-1 m-1 "); //list_rels[x].mode === "AUTO" ? "btn btn-warning m-1 p-1" : "btn btn-secondary m-1 p-1");  //  "rounded-1 "
-    on_time.setAttribute("value", list_rels[x].onTime);
-    on_time.setAttribute("data-time", list_rels[x].onTime);
+    on_time.setAttribute("class", "col rounded-1 m-1"); //list_outputs[x].mode === "AUTO" ? "btn btn-warning m-1 p-1" : "btn btn-secondary m-1 p-1");  //  "rounded-1 "
+    on_time.setAttribute("value", list_outputs[x].onTime);
+    on_time.setAttribute("data-time", list_outputs[x].onTime);
     on_time.setAttribute("onchange", "time_handler(this)"); 
     // row_item.appendChild(on_time);
 
 
     off_time = doc.createElement("input");
-    off_time.style.maXwidth = 100 + 'px';
     off_time.setAttribute("type", "time");
     off_time.setAttribute("id", "offTime " + (x + 1));
-    off_time.setAttribute("class", "col rounded-1 m-1 "); // list_rels[x].mode === "AUTO" ? "btn btn-warning m-1 p-1" : "btn btn-secondary m-1 p-1"); 
-    off_time.setAttribute("value", list_rels[x].offTime);
-    off_time.setAttribute("data-time", list_rels[x].offTime);
+    off_time.setAttribute("class", "col rounded-1 m-1 "); // list_outputs[x].mode === "AUTO" ? "btn btn-warning m-1 p-1" : "btn btn-secondary m-1 p-1"); 
+    off_time.setAttribute("value", list_outputs[x].offTime);
+    off_time.setAttribute("data-time", list_outputs[x].offTime);
     off_time.setAttribute("onchange", "time_handler(this)");
     // row_item.appendChild(off_time);
   // row_item.appendChild(time_form);
  
-    if((list_rels[x].name).includes("Relay ")) {  
+    if((list_outputs[x].type) == "relay") {  
     btn_toggle = doc.createElement("button");
     btn_toggle.setAttribute("data-action", "toggle");
-    btn_toggle.setAttribute("data-pin", list_rels[x].vPin);
-    btn_toggle.setAttribute("data-state", list_rels[x].state);
-    btn_toggle.setAttribute("id", list_rels[x].name);
-    let btn_color = list_rels[x].state === "1" ? "danger " : "success "
-    btn_toggle.setAttribute("class", "col-sm btn btn-"+ btn_color +" m-1 p-1");
-    btn_toggle.innerHTML = list_rels[x].name;
+    btn_toggle.setAttribute("data-pin", list_outputs[x].vPin);
+    btn_toggle.setAttribute("data-state", list_outputs[x].state);
+    btn_toggle.setAttribute("id", list_outputs[x].name);
+    let btn_color = list_outputs[x].state === "1" ? "danger " : "success "
+    btn_toggle.setAttribute("class", "col btn btn-"+ btn_color +" m-1 p-1");
+    btn_toggle.innerHTML = list_outputs[x].name;
 
     row_item.appendChild(btn_mode);
     row_item.appendChild(on_time);
@@ -153,14 +145,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     doc.getElementById("container").appendChild(row_item);
   }
 
-  else if(list_rels[x].name.includes("Pwm ")){
+  else if(list_outputs[x].type == "pwm") {
 
-    btn_mode.setAttribute("class", "col-sm btn btn-" + btn_color + " m-1 p-1");
-    on_time.setAttribute("class", "col-sm rounded-1 m-1 ");
-    off_time.setAttribute("class", "col-sm rounded-1 m-1 ");
+    btn_mode.setAttribute("class", "col btn btn-" + btn_color + " m-1 p-1");
+    on_time.setAttribute("class", "col rounded-1 m-1 ");
+    off_time.setAttribute("class", "col rounded-1 m-1 ");
     
     slider = doc.createElement("div");
-    slider.setAttribute("class", " col ");
+    slider.setAttribute("class", "row  ");
      row_item.appendChild(btn_mode);  
      row_item.appendChild(on_time);  
      row_item.appendChild(off_time);  
@@ -168,23 +160,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
     name_label = doc.createElement("label");
     name_label.for =  "Pwm "+ (x + 1); 
     name_label.className = "col text-primary p-1 m-1 h6"; 
-    name_label.innerHTML = list_rels[x].name;
+    name_label.innerHTML = list_outputs[x].name;
     slider.appendChild(name_label);  
 
  
     value_label = doc.createElement("text");
     value_label.for =  "Pwm "+ (x + 1);
     value_label.className = "col text-danger p-1 mx-auto h6"; 
-    value_label.innerHTML = list_rels[x].state;
+    value_label.innerHTML = list_outputs[x].state;
     slider.appendChild(value_label); 
 
     range = doc.createElement("input");
     range.type = "range";
     range.id = "Pwm "+ (x + 1);
-    range.className = "row mx-auto float-end align-middle"; 
-    range.value = list_rels[x].state;
-    range.dataset.pin = list_rels[x].vPin;    
-    range.dataset.pwm = list_rels[x].state;
+    range.className = "col-8 m-auto align-middle "; // align-middle
+    range.value = list_outputs[x].state;
+    range.dataset.pin = list_outputs[x].vPin;    
+    range.dataset.pwm = list_outputs[x].state;
     // range.class = "col m-1 form-range ";  // data_atrs :  DOMStringMap {action: 'toggle', pin: 'V6', state: '0'}
     slider.appendChild(range); 
 
@@ -282,7 +274,7 @@ document.addEventListener("click", function (event) {
     // ledWgt.setAttribute("class", " btn btn-light ");
 
     // let led = doc.createElement("div");
-    // led.setAttribute("class", list_rels[x].state == "1" ? "led on m-1 p-1" : "led m-1 p-1");
+    // led.setAttribute("class", list_outputs[x].state == "1" ? "led on m-1 p-1" : "led m-1 p-1");
     // ledWgt.appendChild(led);
     // wgt.appendChild(ledWgt);
     // row_item.appendChild(wgt);
