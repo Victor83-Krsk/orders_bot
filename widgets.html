@@ -13,55 +13,45 @@
   </head>
 
   <body class="bg-default">
-    <nav class="navbar navbar-expand-sm" style="background-color: #0fd1b1">
+
+    <nav class="navbar navbar-expand-sm " style="background-color:#0fd1b1;">
       <div class="container-fluid">
         <a class="navbar-brand" href="javascript:void(0)">BLYNK </a>
-        <div class="navbar" id="mynavbar">
-          <ul
-            id="appControl"
-            class="navbar-nav ms-auto"
-            style="align-items: center; line-height: 2rem"
-          >
-            <li class="nav-item me-3 ms-3">
-              <img
-                id="add_wgt"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#demo"
-                src="./img/plus.png"
-                alt="plus"
-                style="width: 32px; text-align: center"
-                class="rounded-pill invisible"
-              />
-            </li>
-            <li class="nav-item me-3">
-              <img
-                id="device"
-                src="./img/arduino.png"
-                alt="ard"
-                style="width: 36px; text-align: center"
-                class="rounded-pill"
-              />
-            </li>
-            <li class="nav-item me-3 ms-3">
-              <img
-                id="start_stop"
-                src="./img/stop.png"
-                alt="stop"
-                style="width: 36px; text-align: center"
-                class="rounded-pill"
-              />
-            </li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- <div class="date_time">
+          <input type="date" class="date">  </input>
+          <input type="time" class="time">  </input>
+        </div> -->
+
+        <div class="collapse navbar-collapse" id="mynavbar">        
+
+          <ul id="appControl" class="navbar-nav ms-auto" style="align-items:center; ">                     
+              <li  class="nav-item me-3">
+                  <img id="device" src="./img/arduino.png" alt="ard" style="width:36px; text-align: center;" class="rounded-pill ">
+              </li>              
+              <li  class="nav-item me-3 ms-3">
+                  <img id="start_stop" src="./img/stop.png" alt="stop" style="width:36px; text-align: center;" class="rounded-pill">
+              </li>
+              <li  class="nav-item me-3 ms-3">
+                <img id="add_wgt" data-bs-toggle="offcanvas" data-bs-target="#demo" 
+                src="./img/plus.png" alt="plus" style="width:32px; text-align: center;" class="rounded-pill invisible">
+              </li>
           </ul>
+     
         </div>
+
       </div>
     </nav>
 
     <ul class="nav nav-justified bg-dark">
       <li class="nav-item">
-        <a class="nav-link text-white " href="/index.html">Home</a>
+        <a class="nav-link active text-warning" href="/index.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active text-warning " href="/widgets.html">Outputs</a>
+        <a class="nav-link text-white" href="/widgets.html">Relays</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="/sensors.html">Sensors</a>
@@ -103,9 +93,11 @@
       </div>
     </div>
 
-    <div id="container" class="container ">   </div>
-<br>
-    <div id="container2" class="container ">   </div>
+    <div id="container" class="container-sm ">   </div>
+ 
+    <div id="container2" class="container-sm ">   </div>
+    <br>
+    
       <!-- <div class="row_item m-1 p-1">
         <button id="Mode 0" data-pin="V7" data-action="mode" data-mode="AUTO" class="btn btn-warning m-1">AUTO</button>
         <div class="cs-form btn-group p-1 m-0">
